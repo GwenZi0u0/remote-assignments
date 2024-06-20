@@ -16,7 +16,7 @@
             <img class="bar" src="./svg/bars-solid.svg" alt="">
         </div>
         <div class="menu">
-            <div class="items_content_menu">
+            <div class="item_content_menu">
                 <ul>
                     <li class="item">
                         <a href="#"><span>Item 1</span></a>
@@ -36,47 +36,46 @@
         </div>
         <!-- navbar -->
         <div class="items_content">
-            <a href="" class="items">
+            <a href="#" class="items">
                 <li><span>Item 1</span></li>
             </a>
-            <a href="" class="items">
+            <a href="#" class="items">
                 <li><span>Item 2</span></li>
             </a>
-            <a href="" class="items">
+            <a href="#" class="items">
                 <li><span>Item 3</span></li>
             </a>
-            <a href="" class="items">
+            <a href="#" class="items">
                 <li><span>Item 4</span></li>
             </a>
         </div>
     </nav>
     <!-- Container -->
-    <div class="container-normal">
-        <div class="welcome_content">
-            <div class="block">
+    <div class="container">
+        <!-- Welcome Message -->
+        <div class="greeting_content">
+            <div>
                 <span>Welcome Message</span>
             </div>
         </div>
-        <div class="section_container">
+        <!-- Section Title -->
+        <div class="section_all">
             <div class="section_title">
                 <span>Section Title</span>
             </div>
             <div class="section_content">
                 <div class="box top">
-                    <div class="section"><span>Content Box 1</span></div>
-                    <div class="section"><span>Content Box 2</span></div>
+                    <div class="sections"><span>Content Box 1</span></div>
+                    <div class="sections"><span>Content Box 2</span></div>
                 </div>
                 <div class="box down">
-                    <div class="section"><span>Content Box 3</span></div>
-                    <div class="section"><span>Content Box 4</span></div>
+                    <div class="sections"><span>Content Box 3</span></div>
+                    <div class="sections"><span>Content Box 4</span></div>
                 </div>
             </div>
-            <div class="section_btn">
-                <button type="button">
-                    <span>Call to Action</span>
-                </button>
+            <div class="btn">
+                <button type="button"><span>Call to Action</span></button>
             </div>
-
         </div>
     </div>
 </body>
@@ -92,7 +91,7 @@
 
     window.addEventListener('resize', handleResize);
 
-    // 設定hammenu的點擊事件 改變menu式
+    // 設定hammenu的點擊事件 改變menu樣式
     function isopenmenu() {
         const menustyle = document.getElementsByClassName("menu")[0];
 
@@ -102,9 +101,6 @@
             menustyle.style.display = 'none';
         }
     }
-
-
-
 </script>
 
 </html>
