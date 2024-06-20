@@ -11,7 +11,7 @@
 <body>
     <nav class="navigator">
         <a href="#" id="logo">Website Title / Logo</a>
-        <!-- hammenu -->
+        <!-- HamMenu -->
         <div class="menu_switch" onclick="isopenmenu()">
             <img class="bar" src="./svg/bars-solid.svg" alt="">
         </div>
@@ -50,7 +50,7 @@
             </a>
         </div>
     </nav>
-
+    <!-- Container -->
     <div class="container-normal">
         <div class="welcome_content">
             <div class="block">
@@ -81,6 +81,18 @@
     </div>
 </body>
 <script>
+    // 抓視窗寬度，解決menustyle殘留的bug
+    function handleResize() {
+        const menustyle = document.getElementsByClassName("menu")[0];
+        var bodyWidth = document.body.clientWidth;
+        if (bodyWidth >= 800) {
+            menustyle.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // 設定hammenu的點擊事件 改變menu式
     function isopenmenu() {
         const menustyle = document.getElementsByClassName("menu")[0];
 
@@ -90,6 +102,8 @@
             menustyle.style.display = 'none';
         }
     }
+
+
 
 </script>
 
