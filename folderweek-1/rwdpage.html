@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Learning Assignment - Week 1</title>
+    <link rel="stylesheet" href="./css/rwdpage.css">
+</head>
+
+<body>
+    <nav class="navigator">
+        <a href="#" id="logo">Website Title / Logo</a>
+        <!-- hammenu -->
+        <div class="menu_switch" onclick="isopenmenu()">
+            <img class="bar" src="./svg/bars-solid.svg" alt="">
+        </div>
+        <div class="menu">
+            <div class="items_content_menu">
+                <ul>
+                    <li class="item">
+                        <a href="#"><span>Item 1</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><span>Item 2</span></a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#"><span>Item 3</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><span>Item 4</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- navbar -->
+        <div class="items_content">
+            <a href="" class="items">
+                <li><span>Item 1</span></li>
+            </a>
+            <a href="" class="items">
+                <li><span>Item 2</span></li>
+            </a>
+            <a href="" class="items">
+                <li><span>Item 3</span></li>
+            </a>
+            <a href="" class="items">
+                <li><span>Item 4</span></li>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-normal">
+        <div class="welcome_content">
+            <div class="block">
+                <span>Welcome Message</span>
+            </div>
+        </div>
+        <div class="section_container">
+            <div class="section_title">
+                <span>Section Title</span>
+            </div>
+            <div class="section_content">
+                <div class="box top">
+                    <div class="section"><span>Content Box 1</span></div>
+                    <div class="section"><span>Content Box 2</span></div>
+                </div>
+                <div class="box down">
+                    <div class="section"><span>Content Box 3</span></div>
+                    <div class="section"><span>Content Box 4</span></div>
+                </div>
+            </div>
+            <div class="section_btn">
+                <button type="button">
+                    <span>Call to Action</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    function isopenmenu() {
+        const menustyle = document.getElementsByClassName("menu")[0];
+
+        if (menustyle.style.display === 'none') {
+            menustyle.style.display = 'block';
+        } else {
+            menustyle.style.display = 'none';
+        }
+    }
+
+</script>
+
+</html>
