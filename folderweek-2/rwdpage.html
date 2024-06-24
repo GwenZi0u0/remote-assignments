@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Learning Assignment - Week 1</title>
+    <link rel="stylesheet" href="./css/rwdpage.css">
+</head>
+
+<body>
+    <nav class="navigator">
+        <a href="#" id="logo">Website Title / Logo</a>
+        <!-- HamMenu -->
+        <div class="menu_switch" onclick="isopenmenu()">
+            <img class="bar" src="./svg/bars-solid.svg" alt="">
+        </div>
+        <div class="menu">
+            <div class="item_content_menu">
+                <ul>
+                    <li class="item">
+                        <a href="#"><span>Item 1</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><span>Item 2</span></a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#"><span>Item 3</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><span>Item 4</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- navbar -->
+        <div class="items_content">
+            <a href="#" class="items">
+                <li><span>Item 1</span></li>
+            </a>
+            <a href="#" class="items">
+                <li><span>Item 2</span></li>
+            </a>
+            <a href="#" class="items">
+                <li><span>Item 3</span></li>
+            </a>
+            <a href="#" class="items">
+                <li><span>Item 4</span></li>
+            </a>
+        </div>
+    </nav>
+    <!-- Container -->
+    <div class="container">
+        <!-- Welcome Message -->
+        <div class="greeting_content">
+            <div>
+                <span>Welcome Message</span>
+            </div>
+        </div>
+        <!-- Section Title -->
+        <div class="section_all">
+            <div class="section_title">
+                <span>Section Title</span>
+            </div>
+            <div class="section_content">
+                <div class="box top">
+                    <div class="sections"><span>Content Box 1</span></div>
+                    <div class="sections"><span>Content Box 2</span></div>
+                </div>
+                <div class="box down">
+                    <div class="sections"><span>Content Box 3</span></div>
+                    <div class="sections"><span>Content Box 4</span></div>
+                </div>
+            </div>
+            <div class="btn">
+                <button type="button"><span>Call to Action</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 抓視窗寬度，解決menustyle殘留的bug
+    function handleResize() {
+        const menustyle = document.getElementsByClassName("menu")[0];
+        var bodyWidth = document.body.clientWidth;
+        if (bodyWidth >= 800) {
+            menustyle.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // 設定hammenu的點擊事件 改變menu樣式
+    function isopenmenu() {
+        const menustyle = document.getElementsByClassName("menu")[0];
+
+        if (menustyle.style.display === 'none') {
+            menustyle.style.display = 'block';
+        } else {
+            menustyle.style.display = 'none';
+        }
+    }
+</script>
+
+</html>
