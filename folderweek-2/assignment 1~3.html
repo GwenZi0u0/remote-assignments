@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Learning Assignment - Week 2</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        background-color: antiquewhite;
+    }
+
+    main {
+        font-size: 20px;
+        padding: 50px 0;
+        line-height: 2.5;
+    }
+
+    h4 {
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        background-color: #eee;
+    }
+</style>
+
+<body>
+    <main>
+        <h1>Remote Learning Assignment - Week 2</h1>
+        <div class="content">
+            <h2>Assignment 1: Function and Array</h2>
+            <h5>max[1, 2, 4, 5]&max[5, 2, 7, 1, 6]</h5>
+            <h4>Answer :&nbsp;
+                <p id="as_arry"></p>
+            </h4>
+
+            <h2>Assignment 2: Function and Object</h2>
+            <h5>calculate({ n1: 2, n2: 3, op: '+' })&calculate({ n1: 5, n2: 2, op: '-' })&calculate({ n1: 1, n2: 6, op:
+                'x' })</h5>
+            <h4>Answer :&nbsp;
+                <p id="as_Object"></p>
+            </h4>
+            <h2>Assignment 3: Function, Array, and Object</h2>
+            <h5>discountedPrice</h5>
+            <h4>Answer :&nbsp;
+                <p id="as_array_object"></p>
+            </h4>
+            <h2>Assignment 5: Algorithm (Advanced Optional)</h2>
+            <h4>Answer :&nbsp;
+                <p id="as_algorithm"></p>
+            </h4>
+        </div>
+    </main>
+    <script>
+        // Assignment 1: Function and Array
+        function max(numbers) {
+            let tmp = 0;
+            numbers.forEach((arraynum) => {
+                if (tmp < arraynum) {
+                    tmp = arraynum
+                }
+            })
+
+            let old = document.getElementById("as_arry").textContent;
+            // 因為有第一輪會先吃到一個空值，顯示在畫面上是",5,7",所以寫if else讓第一輪先false
+            if (old) {
+                document.getElementById("as_arry").innerHTML = old + " , " + tmp;
+            } else {
+                document.getElementById("as_arry").innerHTML = tmp;
+            }
+            return tmp;
+        }
+        console.log(max([1, 2, 4, 5])); // expected output: 5
+        console.log(max([5, 2, 7, 1, 6])); // expected output: 7
+
+        // Assignment 2: Function and Object
+        function calculate(args) {
+            let tmp = undefined;
+            if (args.op === "+") {
+                tmp = args.n1 + args.n2;
+            } else if (args.op === "-") {
+                tmp = args.n1 - args.n2;
+            } else {
+                tmp = 'Not supported';
+            }
+
+            let old = document.getElementById("as_Object").textContent;
+            if (old) {
+                document.getElementById("as_Object").innerHTML = old + " , " + tmp;
+            } else {
+                document.getElementById("as_Object").innerHTML = tmp;
+            }
+
+            return tmp;
+        }
+        console.log(calculate({ n1: 2, n2: 3, op: '+' })); // expected output: 5
+        console.log(calculate({ n1: 5, n2: 2, op: '-' })); // expected output: 3
+        console.log(calculate({ n1: 1, n2: 6, op: 'x' })); // expected output: 'Not supported'
+
+        // Assignment 3: Function, Array, and Object
+        function calculate2(data) {
+            let sum = 0;
+            data.products.forEach((product) => {
+                sum += product.price * data.discount
+
+            })
+            let old = document.getElementById("as_array_object").textContent;
+            if (old) {
+                document.getElementById("as_array_object").innerHTML = old + " , " + sum;
+            } else {
+                document.getElementById("as_array_object").innerHTML = sum;
+            }
+
+            return sum;
+        }
+        const discountedPrice = calculate2({
+            discount: 0.1,
+            products: [
+                {
+                    name: "Product 1",
+                    price: 100
+                },
+                {
+                    name: "Product 2",
+                    price: 700
+                },
+                {
+                    name: "Product 3",
+                    price: 250
+                }
+            ]
+        });
+        console.log(discountedPrice) // show the total price of all products after applying a discount
+
+        // Assignment 5: Algorithm (Advanced Optional)
+        function twoSum(nums, target) {
+            // your code here
+        }
+        /*
+        For example:
+        twoSum([2, 7, 11, 15], 9);
+        Should returns:
+        [0, 1]
+        Because:
+        nums[0] + nums[1] is 9
+        */
+    </script>
+</body>
+
+</html>
