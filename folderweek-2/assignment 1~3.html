@@ -6,31 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Learning Assignment - Week 2</title>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
 
-    body {
-        display: flex;
-        justify-content: center;
-        background-color: antiquewhite;
-    }
-
-    main {
-        font-size: 20px;
-        padding: 50px 0;
-        line-height: 2.5;
-    }
-
-    h4 {
-        display: flex;
-        flex-direction: row;
-        padding-left: 10px;
-        background-color: #eee;
-    }
-</style>
 
 <body>
     <main>
@@ -54,13 +30,26 @@
                 <p id="as_array_object"></p>
             </h4>
             <h2>Assignment 5: Algorithm (Advanced Optional)</h2>
+            <h5>twoSum([2, 7, 11, 15], 9);</h5>
             <h4>Answer :&nbsp;
                 <p id="as_algorithm"></p>
             </h4>
         </div>
     </main>
     <script>
+        // 傳輸到HTML介面上
+        function renderhtml(id, value) {
+            let old = document.getElementById(id).textContent;
+            // 因為有第一輪會先吃到一個空值，顯示在畫面上是",5,7",所以讓第一輪先false
+            if (old) {
+                document.getElementById(id).innerHTML = old + " , " + value;
+            } else {
+                document.getElementById(id).innerHTML = value;
+            }
+        }
+
         // Assignment 1: Function and Array
+
         function max(numbers) {
             let tmp = 0;
             numbers.forEach((arraynum) => {
@@ -69,19 +58,17 @@
                 }
             })
 
-            let old = document.getElementById("as_arry").textContent;
-            // 因為有第一輪會先吃到一個空值，顯示在畫面上是",5,7",所以讓第一輪先false
-            if (old) {
-                document.getElementById("as_arry").innerHTML = old + " , " + tmp;
-            } else {
-                document.getElementById("as_arry").innerHTML = tmp;
-            }
+            renderhtml("as_arry", tmp);
+
             return tmp;
         }
-        console.log(max([1, 2, 4, 5])); // expected output: 5
-        console.log(max([5, 2, 7, 1, 6])); // expected output: 7
+        // expected output: 5
+        console.log(max([1, 2, 4, 5]));
+        // expected output: 7
+        console.log(max([5, 2, 7, 1, 6]));
 
         // Assignment 2: Function and Object
+
         function calculate(args) {
             let tmp = undefined;
             if (args.op === "+") {
@@ -92,34 +79,27 @@
                 tmp = 'Not supported';
             }
 
-            let old = document.getElementById("as_Object").textContent;
-            if (old) {
-                document.getElementById("as_Object").innerHTML = old + " , " + tmp;
-            } else {
-                document.getElementById("as_Object").innerHTML = tmp;
-            }
+            renderhtml("as_Object", tmp);
 
             return tmp;
         }
-        console.log(calculate({ n1: 2, n2: 3, op: '+' })); // expected output: 5
-        console.log(calculate({ n1: 5, n2: 2, op: '-' })); // expected output: 3
-        console.log(calculate({ n1: 1, n2: 6, op: 'x' })); // expected output: 'Not supported'
+        // expected output: 5
+        console.log(calculate({ n1: 2, n2: 3, op: '+' }));
+        // expected output: 3
+        console.log(calculate({ n1: 5, n2: 2, op: '-' }));
+        // expected output: 'Not supported' 
+        console.log(calculate({ n1: 1, n2: 6, op: 'x' }));
 
         // Assignment 3: Function, Array, and Object
         // 用console.log()確認data的值是甚麼，使用迴圈來加總，加總的結果宣告一個變數來return出來。
-        
+
         function calculate2(data) {
             let sum = 0;
             data.products.forEach((product) => {
                 sum += product.price * data.discount
             })
 
-            let old = document.getElementById("as_array_object").textContent;
-            if (old) {
-                document.getElementById("as_array_object").innerHTML = old + " , " + sum;
-            } else {
-                document.getElementById("as_array_object").innerHTML = sum;
-            }
+            renderhtml("as_array_object", sum);
 
             return sum;
         }
@@ -140,21 +120,61 @@
                 }
             ]
         });
-        console.log(discountedPrice) // show the total price of all products after applying a discount
+        // show the total price of all products after applying a discount
+        console.log(discountedPrice);
 
         // Assignment 5: Algorithm (Advanced Optional)
+        // 當i是0; j是從i的下一個開始; => 避免i與j重複。
+        // i < nums.length - 1; => 預防i到最後一個+1的時候後面沒有東西，j超出陣列。
+        // (nums[i] + nums[j] === target) => 找出總和是target的兩個nums的陣列數值。
+
         function twoSum(nums, target) {
-            // your code here
-        }
-        /*
-        For example:
+            for (let i = 0; i < nums.length - 1; i++) {
+                for (let j = i + 1; j < nums.length; j++) {
+                    // console.log(i, j)
+                    if (nums[i] + nums[j] === target) {
+                        // console.log([i, j]);
+                        renderhtml("as_algorithm", [i, j]);
+                        return [i, j];
+                    }
+                }
+            }
+        };
         twoSum([2, 7, 11, 15], 9);
-        Should returns:
-        [0, 1]
-        Because:
-        nums[0] + nums[1] is 9
-        */
+        // twoSum([5, 10, 15, 20], 25);
+
+        // For example:
+        // twoSum([2, 7, 11, 15], 9);
+        // Should returns:
+        // [0, 1]
+        // // Because:
+        // nums[0] + nums[1] is 9
     </script>
 </body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        background-color: antiquewhite;
+    }
+
+    main {
+        font-size: 20px;
+        padding: 50px 100px;
+        line-height: 2.5;
+    }
+
+    h4 {
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        background-color: #eee;
+    }
+</style>
 
 </html>
