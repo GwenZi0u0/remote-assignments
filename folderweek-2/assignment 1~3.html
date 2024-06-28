@@ -70,7 +70,7 @@
             })
 
             let old = document.getElementById("as_arry").textContent;
-            // 因為有第一輪會先吃到一個空值，顯示在畫面上是",5,7",所以寫if else讓第一輪先false
+            // 因為有第一輪會先吃到一個空值，顯示在畫面上是",5,7",所以讓第一輪先false
             if (old) {
                 document.getElementById("as_arry").innerHTML = old + " , " + tmp;
             } else {
@@ -106,12 +106,14 @@
         console.log(calculate({ n1: 1, n2: 6, op: 'x' })); // expected output: 'Not supported'
 
         // Assignment 3: Function, Array, and Object
+        // 用console.log()確認data的值是甚麼，使用迴圈來加總，加總的結果宣告一個變數來return出來。
+        
         function calculate2(data) {
             let sum = 0;
             data.products.forEach((product) => {
                 sum += product.price * data.discount
-
             })
+
             let old = document.getElementById("as_array_object").textContent;
             if (old) {
                 document.getElementById("as_array_object").innerHTML = old + " , " + sum;
