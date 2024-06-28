@@ -10,9 +10,10 @@
 
 <body>
     <nav class="navigator">
-        <a href="#" id="logo">Website Title / Logo</a>
+        <!-- 點擊 刷新回首頁 -->
+        <a href="#" id="logo" onclick="location.href='./rwdpage.html '">Website Title / Logo</a>
         <!-- HamMenu -->
-        <div class="menu_switch" onclick="isopenmenu()">
+        <div class="menu_switch" onclick="changeimage();isshowmenu()">
             <img class="bar" src="./svg/bars-solid.svg" alt="">
         </div>
         <div class="menu">
@@ -53,9 +54,9 @@
     <!-- Container -->
     <div class="container">
         <!-- Welcome Message -->
-        <div class="greeting_content">
+        <div class="greeting_content" onclick="changeText()">
             <div>
-                <span>Welcome Message</span>
+                <span id="change_text">Welcome Message</span>
             </div>
         </div>
         <!-- Section Title -->
@@ -73,34 +74,22 @@
                     <div class="sections"><span>Content Box 4</span></div>
                 </div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick=" openboxes()">
                 <button type="button"><span>Call to Action</span></button>
+            </div>
+            <div class="section_content" style="display: none;">
+                <div class="box top">
+                    <div class="sections"><span>Content Box 5</span></div>
+                    <div class="sections"><span>Content Box 6</span></div>
+                </div>
+                <div class="box down">
+                    <div class="sections"><span>Content Box 7</span></div>
+                    <div class="sections"><span>Content Box 8</span></div>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-    // 抓視窗寬度，解決menustyle殘留的bug
-    function handleResize() {
-        const menustyle = document.getElementsByClassName("menu")[0];
-        var bodyWidth = document.body.clientWidth;
-        if (bodyWidth >= 800) {
-            menustyle.style.display = 'none';
-        }
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    // 設定hammenu的點擊事件 改變menu樣式
-    function isopenmenu() {
-        const menustyle = document.getElementsByClassName("menu")[0];
-
-        if (menustyle.style.display === 'none') {
-            menustyle.style.display = 'block';
-        } else {
-            menustyle.style.display = 'none';
-        }
-    }
-</script>
+<script src="./js/rwdpage.js"></script>
 
 </html>
