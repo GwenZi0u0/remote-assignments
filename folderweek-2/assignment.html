@@ -51,7 +51,8 @@
         // Assignment 1: Function and Array
 
         function max(numbers) {
-            let tmp = 0;
+            // 負無限大 
+            let tmp = -Infinity;
             numbers.forEach((arraynum) => {
                 if (tmp < arraynum) {
                     tmp = arraynum
@@ -66,6 +67,9 @@
         console.log(max([1, 2, 4, 5]));
         // expected output: 7
         console.log(max([5, 2, 7, 1, 6]));
+
+
+        // ****Assignment1 如果陣列都是負數，呼叫函式的結果會是錯的****
 
         // Assignment 2: Function and Object
 
@@ -96,7 +100,8 @@
         function calculate2(data) {
             let sum = 0;
             data.products.forEach((product) => {
-                sum += product.price * data.discount
+                // ****Assignment3 的 discount=0.1 是打九折的意思 ****
+                sum += product.price * (1 - data.discount)
             })
 
             renderhtml("as_array_object", sum);
