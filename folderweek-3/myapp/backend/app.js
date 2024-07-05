@@ -4,7 +4,7 @@ const port = 3000
 const cors = require("cors")
 
 const corsOptions = {
-    "origin": "http://localhost:3000",
+    "origin": "*",
     "methods": "GET",
     "credentials": true,
     "optionsSuccessStatus": 200
