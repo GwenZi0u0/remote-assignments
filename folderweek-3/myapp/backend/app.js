@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 const cors = require("cors")
+const parser = require("cookie-parser")
+const path = require('path');
 
+// 限制
 const corsOptions = {
     "origin": "*",
     "methods": "GET",
@@ -10,13 +13,31 @@ const corsOptions = {
     "optionsSuccessStatus": 200
 }
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions))
+app.use(parser())
+// app.use(express.static('../frontend'));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
-app.get('/', (req, res) => {
-    res.send({ "result": 'Hello, My Server!' })
+// myName
+app.get('/myName', (req, res) => {
+    if (!req.cookies.name) {
+        res.json({ "name": undefined })
+    } else {
+        res.json({ "name": req.cookies.name })
+    }
 })
 
-app.use(express.static('../frontend'));
+// app.get('/', (req, res) => {
+//     res.send({ "result": 'Hello, My Server!' })
+// })
+app.get('/text', (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "myName.html"))
+    if (!req.cookies.name) {
+        res.json({ "name": undefined })
+    } else {
+        res.json({ "name": req.cookies.name })
+    }
+})
 
 app.get('/getData', (req, res) => {
     const number = req.query.number;
@@ -32,6 +53,8 @@ app.get('/getData', (req, res) => {
     } else {
         res.json({ "result": 'Wrong Parameter' });
     }
+    // const cookie = req.get('Cookie')
+    // console.log(cookie);
 })
 
 app.listen(port, () => {
