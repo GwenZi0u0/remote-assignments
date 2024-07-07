@@ -20,6 +20,10 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 // myName
 app.get('/myName', (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "myName.html"))
+})
+
+app.get('/trackName', (req, res) => {
     if (!req.cookies.name) {
         res.json({ "name": undefined })
     } else {
@@ -30,15 +34,6 @@ app.get('/myName', (req, res) => {
 app.get('/', (req, res) => {
     res.send({ "result": 'Hello, My Server!' })
 })
-
-// app.get('/text', (req, res) => {
-//     res.sendFile(path.join(__dirname, "../frontend", "myName.html"))
-//     if (!req.cookies.name) {
-//         res.json({ "name": undefined })
-//     } else {
-//         res.json({ "name": req.cookies.name })
-//     }
-// })
 
 app.get('/getData', (req, res) => {
     const number = req.query.number;
