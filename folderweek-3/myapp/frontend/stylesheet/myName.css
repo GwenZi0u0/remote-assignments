@@ -13,13 +13,10 @@ body {
     background: linear-gradient(#355C7D, #6C5B7B, #C06C84);
 }
 
-header {
-    font-size: 25px;
-    color: #FFEFBA;
-    width: 100%;
+main {
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
 }
 
 .form {
@@ -41,7 +38,8 @@ header {
     line-height: 2;
 }
 
-#number {
+#number,
+#name {
     color: #FFEFBA;
     width: 350px;
     height: 180px;
@@ -61,7 +59,7 @@ header {
     font-size: large;
     border-radius: 10px;
     border: 2px solid #3E5151;
-    background-color: #FC5C7D;
+    background-color: #40E0D0;
     margin: 20px 0;
 }
 
@@ -71,7 +69,7 @@ header {
     cursor: pointer;
 }
 
-#result {
+#userName {
     font-size: 60px;
     color: #DECBA4;
     width: 450px;
@@ -80,4 +78,9 @@ header {
     align-items: center;
     justify-content: center;
     background-color: transparent;
+}
+
+#myName {
+    font-size: 80px;
+    color: #DECBA4;
 }

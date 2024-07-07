@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myName</title>
+    <link rel="stylesheet" href="./stylesheet/myName.css">
+</head>
+
+<body>
+    <main>
+        <form action="" id="nameForm" class="form">
+            <div id="nameBox" class="box">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" size="16" placeholder="">
+            </div>
+            <button id="namebtn" class="btn" type="submit">Submit</button>
+        </form>
+        <p id="myName"></p>
+    </main>
+</body>
+
+<script>
+    const userName = document.getElementById("myName")
+    const name = document.getElementById("name")
+    const nameForm = document.getElementById("nameForm")
+
+    // document.cookie = 'name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+    // **********FetchData************
+    async function fetchData(url) {
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                credentials: 'include'
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.name;
+        } catch (error) {
+            // 處理錯誤
+            console.error('ERROR', error);
+            throw error;
+        }
+    }
+
+    nameForm.addEventListener("submit", async (e) => {
+        // 防止表單提交
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        document.cookie = "name=" + name;
+        // 自動刷新
+        window.location.reload();
+
+    });
+
+    // 取出Cookie的name
+    const nameCookie = async () => {
+        // console.log(userName)
+        try {
+            const cookieData = await fetchData('https://remote-assignments-cl2w.onrender.com/')
+            if (cookieData) {
+                // 有資料 隱藏表單
+                nameForm.style.display = "none";
+                userName.textContent = `User: ${cookieData}`;
+            } else {
+                // 沒資料 隱藏資料
+                userName.style.display = "none";
+            }
+        } catch {
+            userName.textContent = 'Error';
+        }
+    }
+    nameCookie();
+
+    // if (cookieData) {
+    //     userName.textContent = `User: ${cookieData}`;
+    // } else {
+    //     userName.textContent = 'No cookie found';
+    // }
+    // userName.textContent = cookieData ? `User: ${cookieData}` : 'No cookie found'
+</script>
+
+</html>
