@@ -62,7 +62,7 @@
     const nameCookie = async () => {
         // console.log(userName)
         try {
-            const cookieData = await fetchData('https://remote-assignments-cl2w.onrender.com/myName')
+            const cookieData = await fetchData('https://remote-assignments-cl2w.onrender.com/trackName')
             if (cookieData) {
                 // 有資料 隱藏表單
                 nameForm.style.display = "none";
@@ -76,13 +76,6 @@
         }
     }
     nameCookie();
-
-    // if (cookieData) {
-    //     userName.textContent = `User: ${cookieData}`;
-    // } else {
-    //     userName.textContent = 'No cookie found';
-    // }
-    // userName.textContent = cookieData ? `User: ${cookieData}` : 'No cookie found'
 </script>
 
 </html>
