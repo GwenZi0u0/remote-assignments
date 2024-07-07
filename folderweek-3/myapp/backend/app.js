@@ -7,7 +7,7 @@ const path = require('path');
 
 // 限制
 const corsOptions = {
-    "origin": "*",
+    "origin": "https://remote-assignments-cl2w.onrender.com/",
     "methods": "GET",
     "credentials": true,
     "optionsSuccessStatus": 200
@@ -31,14 +31,14 @@ app.get('/', (req, res) => {
     res.send({ "result": 'Hello, My Server!' })
 })
 
-app.get('/text', (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "myName.html"))
-    if (!req.cookies.name) {
-        res.json({ "name": undefined })
-    } else {
-        res.json({ "name": req.cookies.name })
-    }
-})
+// app.get('/text', (req, res) => {
+//     res.sendFile(path.join(__dirname, "../frontend", "myName.html"))
+//     if (!req.cookies.name) {
+//         res.json({ "name": undefined })
+//     } else {
+//         res.json({ "name": req.cookies.name })
+//     }
+// })
 
 app.get('/getData', (req, res) => {
     const number = req.query.number;
