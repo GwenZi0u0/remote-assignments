@@ -27,9 +27,10 @@ app.get('/myName', (req, res) => {
     }
 })
 
-// app.get('/', (req, res) => {
-//     res.send({ "result": 'Hello, My Server!' })
-// })
+app.get('/', (req, res) => {
+    res.send({ "result": 'Hello, My Server!' })
+})
+
 app.get('/text', (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend", "myName.html"))
     if (!req.cookies.name) {
