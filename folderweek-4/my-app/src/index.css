@@ -1,0 +1,403 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navigator {
+  position: fixed;
+  font-size: 1.25em;
+  width: 100%;
+  height: 60px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  background-color: #8899aa;
+}
+
+#logo {
+  width: 13em;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HamMenu */
+.menu_switch {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+/* navbar */
+.items_content {
+  width: 28em;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-right: 1em;
+}
+
+.items {
+  width: 7.5em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  position: relative;
+  top: 60px;
+}
+
+/* Welcome Message */
+.greeting_content {
+  font-size: 2.5em;
+  font-weight: bold;
+  height: 260px;
+  background-color: #ccddee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Section Title */
+.section_all {
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section_title {
+  font-size: 2em;
+  font-weight: bold;
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section_content {
+  width: 100%;
+  height: 400px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.box {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.top {
+  margin-bottom: 0.8em;
+}
+
+.down {
+  margin-top: 0.8em;
+}
+
+.sections {
+  width: 100%;
+  height: 100%;
+  background-color: #8899aa;
+  display: flex;
+  justify-content: center;
+  margin: 0 0.8em;
+}
+
+.sections span {
+  font-size: 1.5em;
+  padding-top: 0.8em;
+}
+
+.btn {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.btn :hover {
+  background-color: cadetblue;
+  cursor: pointer;
+}
+
+button {
+  font-size: 1.5em;
+  text-align: center;
+  width: 8em;
+  height: 3em;
+  background-color: #ddeeff;
+  border: none;
+}
+
+/* Assignment4 有一個很小的細節，就是斷點本身的寬度有沒有被「包含」？
+例如說在 800px 的寬度應該是呈現 >= 800 和 < 1200 的樣式，
+導覽列要到「小於 800px」才會變成漢堡選單；同理 500px 的寬度也要檢查看看 */
+@media screen and (max-width:499.9px) {
+
+  #logo {
+      font-size: 1em;
+  }
+
+  /* navbar */
+  .items_content {
+      display: none;
+  }
+
+  /* HamMenu */
+  .menu_switch {
+      position: absolute;
+      right: 2.5em;
+      height: 4.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .bar {
+      display: block;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      z-index: 4;
+  }
+
+  .menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 0 0 0.8px #818f9d;
+      opacity: 0.9;
+      display: none;
+  }
+
+  .item_content_menu {
+      line-height: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 0 0 6%;
+  }
+
+  a:hover {
+      background-color: #eeeeee;
+  }
+
+  .item {
+      width: 100%;
+      height: 3em;
+  }
+
+  /* Container */
+  /* Welcome Message */
+  .greeting_content {
+      font-size: 2em;
+      height: 232px;
+  }
+
+  /* Section Title */
+  .section_all {
+      height: auto;
+  }
+
+  .section_title {
+      font-size: 2em;
+      height: 65px;
+  }
+
+  .section_content {
+      height: auto;
+      margin-bottom: 10px;
+  }
+
+  .box {
+      width: 90%;
+      height: 20em;
+      flex-direction: column;
+  }
+
+  .top {
+      margin-bottom: 0;
+  }
+
+  .down {
+      margin-top: 0;
+  }
+
+  .sections {
+      margin: 0.5em 0.5em;
+  }
+
+  .sections span {
+      font-size: 1em;
+  }
+
+  .btn {
+      height: auto;
+      padding-bottom: 10px;
+  }
+
+  button {
+      font-size: 1em;
+  }
+}
+
+@media screen and (max-width:799.9px) and (min-width:500px) {
+
+  .navigator {
+      font-size: 1em;
+  }
+
+  #logo {
+      font-size: 1.4em;
+  }
+
+  /* navbar */
+  .items_content {
+      display: none;
+  }
+
+  /* HamMenu */
+  .menu_switch {
+      position: absolute;
+      right: 3.5em;
+      height: 4.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .bar {
+      display: block;
+      position: absolute;
+      width: 3em;
+      height: 3em;
+      z-index: 4;
+  }
+
+  .menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 0 0 0.8px #818f9d;
+      opacity: 0.9;
+  }
+
+  .item_content_menu {
+      font-size: 1.5em;
+      line-height: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 0 0 6%;
+  }
+
+  a:hover {
+      background-color: #eeeeee;
+  }
+
+  .item {
+      width: 100%;
+      height: 3em;
+  }
+
+  /* Container */
+  /* Welcome Message */
+  .greeting_content {
+      font-size: 2em;
+  }
+
+  /* Section Title */
+  .section_title {
+      font-size: 2em;
+      height: 70px;
+  }
+
+  .section_content {
+      height: 430px;
+      margin-bottom: 10px;
+  }
+
+  .box {
+      width: 96%;
+  }
+
+  .sections {
+      width: 60%;
+  }
+
+  .sections span {
+      font-size: 1em;
+  }
+
+  .btn {
+      height: 70px;
+      padding-bottom: 10px;
+  }
+
+  button {
+      font-size: 1em;
+  }
+}
+
+@media screen and (max-width:1199.9px) and (min-width:800px) {
+  .box {
+      width: 95%;
+  }
+}
+ 
+
