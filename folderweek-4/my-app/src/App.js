@@ -6,11 +6,6 @@ import WelcomeMessage from './components/WelcomeMessage';
 import Section from './components/Section';
 
 function App() {
-//   const [count, setCount] = useState(0);
-  
-//     const increment = ( ) => {
-//       setCount(count + 1);
-// }
   return (
     <>
      <nav className="navigator">
@@ -23,14 +18,6 @@ function App() {
           <WelcomeMessage />
           <Section />
         </div>
-      {/* <div className='App'>
-        <Header />
-        <Menu />
-        <div className='container'>
-          <WelcomeMessage />
-          <Section />
-        </div>
-      </div> */}
     </>
   );
 }

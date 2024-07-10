@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-
-
 const WelcomeMessage = function (){
     const [message, setMessage] = useState('Welcome Message')
 
