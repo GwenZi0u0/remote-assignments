@@ -1,3 +1,6 @@
+const card = document.getElementsByTagName("section")[0]
+const moreButton =document.getElementsByTagName("button")[0]
+
 async function ajax(url) {
     try{
         const response = await fetch(url)
@@ -10,53 +13,49 @@ async function ajax(url) {
     }
 }
 
+function lazyload(count){
+    let url = " https://api.github.com/orgs/facebook/repos?per_page=5&page=" + count
+    ajax(url).then((data) => {
+        render(data);
+    })
+}
+
+let count = 1
+
+lazyload(count)
+
+
 function render(data) {
-    const card = document.getElementsByTagName("section")[0]
-    const moreButton =document.getElementsByTagName("button")[0]
     let currentIndex = 0
     const pageLength = 5
 
-    function loadCards(count){
-        const end = currentIndex + pageLength
-        const pageToLength = data.slice(currentIndex, end)    
-           
-        pageToLength.forEach(function(page){
+    const end = currentIndex + pageLength
+    const pageToLength = data.slice(currentIndex, end)    
+       
+    pageToLength.forEach(function(page){
+        let topicList = ""
+        if(page.topics){
+            topicList = page.topics.map(topic => `<li class="topics">${topic}</li>` ).join('')
+        }
 
-            const topicList = page.topics && page.topics.length > 0 ? page.topics.map(topic => `<li class="topics">${topic}</li>` ).join('') : '' 
-
-            card.innerHTML += `
-            <div class="Card">
-                <div class="page">
-                    <span class="pageName"><a href="">${page.name}</a></span>
-                    <div class="pageVisibility">${page.visibility}</div>
-                </div>
-                <div class="description">${page.description}</div>
-                <ul class="cardTopics">
-                    ${topicList}
-                </ul>
+        card.innerHTML += `
+        <div class="Card">
+            <div class="page">
+                <span class="pageName"><a href="">${page.name}</a></span>
+                <div class="pageVisibility">${page.visibility[0].toUpperCase() + page.visibility.slice(1)}</div>
             </div>
-            `
-        })
-        // function morebtn(){
-        //     currentIndex += pageToLength.length
-        // }
-        // morebtn()
-    }
-    
-    loadCards()
-
-     moreButton.addEventListener('click', loadCards)
+            <div class="description">${page.description}</div>
+            <ul class="cardTopics">
+                ${topicList}
+            </ul>
+        </div>
+        `
+    })
 }
 
-const url = " https://api.github.com/orgs/facebook/repos?per_page=5&page=1"
-ajax(url).then((data) => {
-    render(data);
-})
-
-
-   // const topicList = function (){
-            //     if(page.topics && page.topics.length > 0 ){
-            //         page.topics.map(topic => `<li class="topics">${topic}</li>` ).join('')
-            //     }
-            // }
-
+function addCount(){
+    count += 1
+    lazyload(count)
+}
+// page.visibility
+ moreButton.addEventListener('click', addCount)
