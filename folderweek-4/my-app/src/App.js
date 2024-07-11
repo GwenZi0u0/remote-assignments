@@ -1,5 +1,4 @@
 import './App.css';
-// import React, { useState } from 'react';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import WelcomeMessage from './components/WelcomeMessage';
@@ -9,15 +8,13 @@ function App() {
   return (
     <>
      <nav className="navigator">
-      <Header>
-      
-      </Header>
+      <Header />
       <Menu />
      </nav>
      <div className='container'>
-          <WelcomeMessage />
-          <Section />
-        </div>
+        <WelcomeMessage />
+        <Section />
+      </div>
     </>
   );
 }

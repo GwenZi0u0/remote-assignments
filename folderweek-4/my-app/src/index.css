@@ -177,9 +177,6 @@ button {
   border: none;
 }
 
-/* Assignment4 有一個很小的細節，就是斷點本身的寬度有沒有被「包含」？
-例如說在 800px 的寬度應該是呈現 >= 800 和 < 1200 的樣式，
-導覽列要到「小於 800px」才會變成漢堡選單；同理 500px 的寬度也要檢查看看 */
 @media screen and (max-width:499.9px) {
 
   #logo {

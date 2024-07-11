@@ -57,5 +57,5 @@ function addCount(){
     count += 1
     lazyload(count)
 }
-// page.visibility
+
  moreButton.addEventListener('click', addCount)
