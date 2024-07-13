@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #005CAF;
+  background-color: #005caf;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -80,7 +80,7 @@ a {
   align-items: center;
 }
 
-.btns{
+.btns {
   width: 90%;
   font-size: 0.8em;
   display: flex;
@@ -93,20 +93,20 @@ a {
 .btn {
   width: 40%;
   height: 6em;
-  background-color: #D9CD90;
+  background-color: #d9cd90;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.btn span{
+.btn span {
   font-size: 32px;
 }
 
-button{
+button {
   width: 100%;
-  background-color: #D9CD90;
+  background-color: #d9cd90;
   border: none;
 }
 
@@ -116,13 +116,13 @@ button:hover,
   cursor: pointer;
 }
 
-.result{
+.result {
   color: #eee;
   font-size: 4em;
   text-align: center;
 }
 
-.allCountBtn{
+.allCountBtn {
   width: 40%;
   display: flex;
   align-items: center;
@@ -130,37 +130,30 @@ button:hover,
   padding: 0 5em;
 }
 
-#allBtn{
+#allBtn {
   height: 6em;
   font-size: 2.5em;
-  background-color: #D9CD90;
+  background-color: #d9cd90;
   border-radius: 10px;
 }
 
-.btnEnter{
+.btnEnter {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 2em;
+  padding: 2em 0;
 }
 
-.addbtn{
+.addbtn {
   width: 20em;
 }
 
-.total{
-  color: #eee;
-  font-size: 2em;
-  text-align: center;
-}
-
-@media screen and (max-width:499.9px) {
-
+@media screen and (max-width: 499.9px) {
   #logo {
-      font-size: 2em;
+    font-size: 2em;
   }
- 
+
   /* Container */
   .container {
     top: 40px;
@@ -176,52 +169,46 @@ button:hover,
     width: 55%;
   }
 
-  .allCountBtn{
+  .allCountBtn {
     width: 80%;
     padding: 2em 0 0 0;
   }
 
-  #allBtn{
+  #allBtn {
     height: 3em;
-    font-size: 2em
+    font-size: 2em;
   }
- 
-  .btnEnter{
-    padding-top:2.5em ;
+
+  .btnEnter {
+    padding: 2.5em 0;
     font-size: 1.5em;
     height: 2em;
   }
-  .addbtn{
+  .addbtn {
     width: 20em;
-  }
-  .total{
-    font-size: 1.2em;
   }
 }
 
-@media screen and (max-width:799.9px) and (min-width:500px) {
+@media screen and (max-width: 799.9px) and (min-width: 500px) {
   #logo {
-      font-size: 3em;
+    font-size: 3em;
   }
 
   /* Section  */
   .sections {
-      width: 70%;
+    width: 70%;
   }
-  .allCountBtn{
+  .allCountBtn {
     padding: 0 3em;
   }
 
-  #allBtn{
+  #allBtn {
     height: 10em;
   }
-
 }
 
-@media screen and (max-width:1199.9px) and (min-width:800px) {
+@media screen and (max-width: 1199.9px) and (min-width: 800px) {
   .box {
-      width: 95%;
+    width: 95%;
   }
 }
- 
-
