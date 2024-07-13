@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -90,7 +90,6 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 /* Section Title */
@@ -177,224 +176,220 @@ button {
   border: none;
 }
 
-@media screen and (max-width:499.9px) {
-
+@media screen and (max-width: 499.9px) {
   #logo {
-      font-size: 1em;
+    font-size: 1em;
   }
 
   /* navbar */
   .items_content {
-      display: none;
+    display: none;
   }
 
   /* HamMenu */
   .menu_switch {
-      position: absolute;
-      right: 2.5em;
-      height: 4.5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    position: absolute;
+    right: 2.5em;
+    height: 4.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .bar {
-      display: block;
-      position: absolute;
-      width: 2em;
-      height: 2em;
-      z-index: 4;
+    display: block;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    z-index: 4;
   }
 
   .menu {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100vh;
-      background-color: #fff;
-      box-shadow: 0 0 0 0.8px #818f9d;
-      opacity: 0.9;
-      display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 0 0.8px #818f9d;
+    opacity: 0.9;
+    display: none;
   }
 
   .item_content_menu {
-      line-height: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0 0 0 6%;
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 0 6%;
   }
 
   a:hover {
-      background-color: #eeeeee;
+    background-color: #eeeeee;
   }
 
   .item {
-      width: 100%;
-      height: 3em;
+    width: 100%;
+    height: 3em;
   }
 
   /* Container */
   /* Welcome Message */
   .greeting_content {
-      font-size: 2em;
-      height: 232px;
+    font-size: 2em;
+    height: 232px;
   }
 
   /* Section Title */
   .section_all {
-      height: auto;
+    height: auto;
   }
 
   .section_title {
-      font-size: 2em;
-      height: 65px;
+    font-size: 2em;
+    height: 65px;
   }
 
   .section_content {
-      height: auto;
-      margin-bottom: 10px;
+    height: auto;
+    margin-bottom: 10px;
   }
 
   .box {
-      width: 90%;
-      height: 20em;
-      flex-direction: column;
+    width: 90%;
+    height: 20em;
+    flex-direction: column;
   }
 
   .top {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   .down {
-      margin-top: 0;
+    margin-top: 0;
   }
 
   .sections {
-      margin: 0.5em 0.5em;
+    margin: 0.5em 0.5em;
   }
 
   .sections span {
-      font-size: 1em;
+    font-size: 1em;
   }
 
   .btn {
-      height: auto;
-      padding-bottom: 10px;
+    height: auto;
+    padding-bottom: 10px;
   }
 
   button {
-      font-size: 1em;
+    font-size: 1em;
   }
 }
 
-@media screen and (max-width:799.9px) and (min-width:500px) {
-
+@media screen and (max-width: 799.9px) and (min-width: 500px) {
   .navigator {
-      font-size: 1em;
+    font-size: 1em;
   }
 
   #logo {
-      font-size: 1.4em;
+    font-size: 1.4em;
   }
 
   /* navbar */
   .items_content {
-      display: none;
+    display: none;
   }
 
   /* HamMenu */
   .menu_switch {
-      position: absolute;
-      right: 3.5em;
-      height: 4.5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    position: absolute;
+    right: 3.5em;
+    height: 4.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .bar {
-      display: block;
-      position: absolute;
-      width: 3em;
-      height: 3em;
-      z-index: 4;
+    display: block;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    z-index: 4;
   }
 
   .menu {
-      display: none;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100vh;
-      background-color: #fff;
-      box-shadow: 0 0 0 0.8px #818f9d;
-      opacity: 0.9;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 0 0.8px #818f9d;
+    opacity: 0.9;
   }
 
   .item_content_menu {
-      font-size: 1.5em;
-      line-height: 4;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0 0 0 6%;
+    font-size: 1.5em;
+    line-height: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 0 6%;
   }
 
   a:hover {
-      background-color: #eeeeee;
+    background-color: #eeeeee;
   }
 
   .item {
-      width: 100%;
-      height: 3em;
+    width: 100%;
+    height: 3em;
   }
 
   /* Container */
   /* Welcome Message */
   .greeting_content {
-      font-size: 2em;
+    font-size: 2em;
   }
 
   /* Section Title */
   .section_title {
-      font-size: 2em;
-      height: 70px;
+    font-size: 2em;
+    height: 70px;
   }
 
   .section_content {
-      height: 430px;
-      margin-bottom: 10px;
+    height: 430px;
+    margin-bottom: 10px;
   }
 
   .box {
-      width: 96%;
+    width: 96%;
   }
 
   .sections {
-      width: 60%;
+    width: 60%;
   }
 
   .sections span {
-      font-size: 1em;
+    font-size: 1em;
   }
 
   .btn {
-      height: 70px;
-      padding-bottom: 10px;
+    height: 70px;
+    padding-bottom: 10px;
   }
 
   button {
-      font-size: 1em;
+    font-size: 1em;
   }
 }
 
-@media screen and (max-width:1199.9px) and (min-width:800px) {
+@media screen and (max-width: 1199.9px) and (min-width: 800px) {
   .box {
-      width: 95%;
+    width: 95%;
   }
 }
- 
-
