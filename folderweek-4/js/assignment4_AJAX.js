@@ -31,7 +31,7 @@ function render(data) {
   // let currentIndex = 0
   // const pageLength = 5
   // const end = currentIndex + pageLength
-  // 原本設計是要進入頁面時就直接渲染前五個資料，但確實上方的過程比較多餘
+  // 原本設計是要進入頁面時就直接渲染前五個資料，發現上方url中已含page=5，自動渲染五筆資料
 
   // 留下slice來渲染
   const pageToLength = data.slice();

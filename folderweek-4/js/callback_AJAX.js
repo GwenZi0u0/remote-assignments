@@ -3,7 +3,7 @@
 // You should use window.setTimeout() for time scheduling.
 
 function delayedResult(n1, n2, delayTime, callback) {
-  setTimeout(function (sum) {
+  setTimeout(function () {
     let result = n1 + n2;
     callback(result);
   }, delayTime);
