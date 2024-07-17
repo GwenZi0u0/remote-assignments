@@ -32,11 +32,9 @@ function render(data) {
   // const pageLength = 5
   // const end = currentIndex + pageLength
   // 原本設計是要進入頁面時就直接渲染前五個資料，發現上方url中已含page=5，自動渲染五筆資料
+  // const pageToLength = data.slice();
 
-  // 留下slice來渲染
-  const pageToLength = data.slice();
-
-  pageToLength.forEach(function (page) {
+  data.forEach(function (page) {
     let topicList = "";
     if (page.topics) {
       topicList = page.topics
